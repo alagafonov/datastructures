@@ -2,18 +2,19 @@
 #include "SLinkedList.h"
 #include "DLinkedList.h"
 #include "CLinkedList.h"
+#include "Stack.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
 	// Singly linked list.
-	SLinkedList<int> lList;
-	lList.AppendToTail(4);
-	lList.AppendToTail(3);
-	lList.AppendToTail(2);
-	lList.AppendToTail(1);
-	lList.ReverseList();
+	//SLinkedList<int> lList;
+	//lList.AppendToTail(4);
+	//lList.AppendToTail(3);
+	//lList.AppendToTail(2);
+	//lList.AppendToTail(1);
+	//lList.ReverseList();
 	//cout << lList.GetNthElementFromTail(3) << endl;
 	//cout << lList.GetNthElementFromTailRec(1) << endl;
 	//cout << lList.GetMiddleNodeContent() << endl;
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 	//lList.AppendToTail(101);
 	//cout << lList.GetContentAtPos(100) << endl;
 	//cout << lList.IsInList(22) << endl;
-	lList.Print();
+	//lList.Print();
 
 	// Doubly linked list.
 	//DLinkedList<int> dList;
@@ -46,6 +47,17 @@ int main(int argc, char *argv[])
 	//cout << cList.GetCurrentNode() << endl;
 	//cout << cList.GetCurrentNode() << endl;
 	//cList.Print();
+
+	// Stack.
+	Stack<int> stack;
+	stack.Push(10);
+	stack.Push(12);
+	stack.Push(14);
+	stack.Push(15);
+	cout << stack.Pop() << endl;
+	cout << stack.GetTop() << endl;
+	//cout << stack.IsEmpty() << endl;
+	stack.Print();
 
 	std::getchar();
 	return 0;
