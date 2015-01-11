@@ -1,0 +1,52 @@
+#include <iostream>
+#include "SLinkedList.h"
+#include "DLinkedList.h"
+#include "CLinkedList.h"
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+	// Singly linked list.
+	SLinkedList<int> lList;
+	lList.AppendToTail(4);
+	lList.AppendToTail(3);
+	lList.AppendToTail(2);
+	lList.AppendToTail(1);
+	lList.ReverseList();
+	//cout << lList.GetNthElementFromTail(3) << endl;
+	//cout << lList.GetNthElementFromTailRec(1) << endl;
+	//cout << lList.GetMiddleNodeContent() << endl;
+	//lList.InsertAtPos(0, 9);
+	//lList.DeleteAtPos(2);
+	//lList.AppendToTail(101);
+	//cout << lList.GetContentAtPos(100) << endl;
+	//cout << lList.IsInList(22) << endl;
+	lList.Print();
+
+	// Doubly linked list.
+	//DLinkedList<int> dList;
+	//dList.AppendToHead(11);
+	//dList.AppendToTail(1);
+	//dList.AppendToTail(3);
+	//dList.DeleteTail();
+	//dList.DeleteTail();
+	//dList.AppendToHead(24);
+	//dList.AppendToTail(23);
+	//cout << dList.IsInList(24) << endl;
+	//dList.Print();
+	//dList.PrintBackwards();
+
+	// Circular linked list.
+	//CLinkedList<int> cList;
+	//cList.AppendToTail(11);
+	//cList.AppendToTail(1);
+	//cList.AppendToTail(3);
+	//cout << cList.GetCurrentNode() << endl;
+	//cout << cList.GetCurrentNode() << endl;
+	//cout << cList.GetCurrentNode() << endl;
+	//cList.Print();
+
+	std::getchar();
+	return 0;
+}
