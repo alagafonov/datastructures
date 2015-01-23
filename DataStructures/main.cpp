@@ -4,6 +4,7 @@
 #include "CLinkedList.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "Algorithm.h"
 
 using namespace std;
 
@@ -61,16 +62,27 @@ int main(int argc, char *argv[])
 	//stack.Print();
 
 	// Stack.
-	Queue<int> queue;
-	queue.EnQueue(10);
-	queue.EnQueue(12);
-	queue.EnQueue(14);
-	queue.EnQueue(15);
-	cout << queue.DeQueue() << endl;
-	cout << queue.DeQueue() << endl;
+	//Queue<int> queue;
+	//queue.EnQueue(10);
+	//queue.EnQueue(12);
+	//queue.EnQueue(14);
+	//queue.EnQueue(15);
+	//cout << queue.DeQueue() << endl;
+	//cout << queue.DeQueue() << endl;
 	//cout << queue.GetFirstNode() << endl;
 	//cout << queue.IsEmpty() << endl;
-	queue.Print();
+	//queue.Print();
+
+	// Factorial.
+	Algorithm alg;
+	/*cout << "0! = " << alg.Factorial(0) << endl;
+	cout << "1! = " << alg.Factorial(1) << endl;
+	cout << "2! = " << alg.Factorial(2) << endl;
+	cout << "5! = " << alg.Factorial(5) << endl;
+	cout << "10! = " << alg.Factorial(10) << endl;
+	cout << "12! = " << alg.Factorial(12) << endl;
+	cout << "13! = " << alg.Factorial(13) << endl;
+	cout << "100! = " << alg.Factorial(100) << endl;*/
 
 	std::getchar();
 	return 0;
