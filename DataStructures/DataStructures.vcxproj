@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClInclude Include="CLinkedList.h" />
     <ClInclude Include="DLinkedList.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="SLinkedList.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Stack.h" />

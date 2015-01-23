@@ -3,6 +3,7 @@
 #include "DLinkedList.h"
 #include "CLinkedList.h"
 #include "Stack.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -49,15 +50,27 @@ int main(int argc, char *argv[])
 	//cList.Print();
 
 	// Stack.
-	Stack<int> stack;
-	stack.Push(10);
-	stack.Push(12);
-	stack.Push(14);
-	stack.Push(15);
-	cout << stack.Pop() << endl;
-	cout << stack.GetTop() << endl;
+	//Stack<int> stack;
+	//stack.Push(10);
+	//stack.Push(12);
+	//stack.Push(14);
+	//stack.Push(15);
+	//cout << stack.Pop() << endl;
+	//cout << stack.GetTop() << endl;
 	//cout << stack.IsEmpty() << endl;
-	stack.Print();
+	//stack.Print();
+
+	// Stack.
+	Queue<int> queue;
+	queue.EnQueue(10);
+	queue.EnQueue(12);
+	queue.EnQueue(14);
+	queue.EnQueue(15);
+	cout << queue.DeQueue() << endl;
+	cout << queue.DeQueue() << endl;
+	//cout << queue.GetFirstNode() << endl;
+	//cout << queue.IsEmpty() << endl;
+	queue.Print();
 
 	std::getchar();
 	return 0;
