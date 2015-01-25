@@ -11,5 +11,7 @@ public:
 	~Algorithm();
 	double long Factorial(int n);
 	string MultiplyStrings(string n1, string n2);
+	int CharToInt(char c);
+	char IntToChar(int i);
 };
 

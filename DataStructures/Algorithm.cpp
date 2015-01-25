@@ -29,43 +29,59 @@ double long Algorithm::Factorial(int n)
 
 string Algorithm::MultiplyStrings(string n1, string n2)
 {
-	/*int x, y, r, carry = 0;
-	for (int i = 0; i < n1.length(); i++)
+	// Create result string and set its length to the sum of lengths of input strings and set all characters to 0.
+	string result;
+	result.resize(n1.length() + n2.length(), '0');
+
+	// Define intermediate variables.
+	int x, s, r, carry;
+
+	// Iterate over first string in reverse order.
+	for (int i = n1.length() - 1; i >= 0; i--)
 	{
-		x = n1[i] - 48;
-		for (int j = 0; j < n2.length(); i++)
+		carry = 0;
+		
+		// Get ith character from first string and convert it to integer
+		x = CharToInt(n1[i]);
+		
+		// Iterate over seond string in reverse order.
+		for (int j = n2.length() - 1; j >= 0; j--)
 		{
-			y = n2[i] - 48;
-			r = x * y;
+			// Calculate product of ith number from first string and jth number from second string.
+			// Then add contents of the current position in the result string and carry forward variable.
+			s = x * CharToInt(n2[j]) + CharToInt(result[j + i + 1]) + carry;
+
+			// Get second digit from the result of the product e.g. if s = 12 then r = 2 if s = 4 then r = 4.
+			r = s % 10;
+
+			// Set first digit to be carried forward e.g. if s = 12 then carry = 1 if s = 2 then carry = 0.
+			carry = (s - r) / 10;
+
+			// Add r to the result string.
+			result[j + i + 1] = IntToChar(r);
 		}
-	}*/
 
-	/*Stack<char> stack1;
-	Stack<char> stack2;
-
-	for (int i = 0; i < n1.length(); i++)
-	{
-		stack1.Push(n1[i]);
+		// Add carry forward to the result string.
+		result[i] = IntToChar(carry);
 	}
 
-	for (int i = 0; i < n2.length(); i++)
+	// Because we are adding numbers to the result string from the back in some cases there will be a leading 0 in front of the string.
+	// For example if input is x = '100', y = '1' then result string length will be length of (x) + length of (y) = 4
+	// so the result will be stored as 0100 so in this case we erase the first digit.
+	if (result[0] == '0')
 	{
-		stack2.Push(n2[i]);
+		result.erase(result.begin());
 	}
 
-	int x, y, carry = 0;
-	while (!stack1.IsEmpty() || !stack2.IsEmpty())
-	{
-		x = stack1.Pop() - 48;
-	}*/
+	return result;
+}
 
-	//stack1.Print();
-	//stack2.Print();
+int Algorithm::CharToInt(char c)
+{
+	return c - 48;
+}
 
-	//return "";
-
-	/*for (int j = 0; j < n2.length(); j++)
-	{
-
-	}*/
+char Algorithm::IntToChar(int i)
+{
+	return i + 48;
 }

@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
 	cout << "12! = " << alg.Factorial(12) << endl;
 	cout << "13! = " << alg.Factorial(13) << endl;
 	cout << "100! = " << alg.Factorial(100) << endl;*/
+	cout << alg.MultiplyStrings("100", "1") << endl;
 
 	std::getchar();
 	return 0;
