@@ -9,19 +9,21 @@ Algorithm::~Algorithm()
 {
 }
 
-double long Algorithm::Factorial(int n)
+string Algorithm::Factorial(int n)
 {
-	double long ret = 1;
-	Stack<int> stack;
+	string ret = "1";
+	Stack<string> stack;
 
+	// Add numbers n..1 to stack converting them to strings.
 	while (n > 0)
 	{
-		stack.Push(n--);
+		stack.Push(IntToString(n--));
 	}
 
+	// While stack is not empty keep multiplying numbers using sring multiplication function.
 	while (!stack.IsEmpty())
 	{
-		ret *= stack.Pop();
+		ret = MultiplyStrings(ret, stack.Pop());
 	}
 
 	return ret;
@@ -84,4 +86,40 @@ int Algorithm::CharToInt(char c)
 char Algorithm::IntToChar(int i)
 {
 	return i + 48;
+}
+
+string Algorithm::IntToString(int n)
+{
+	// If n = 0 then just return string containing "0".
+	if (n == 0)
+	{
+		return "0";
+	}
+
+	int r;
+	bool neg = false;
+	string ret;
+	
+	// Check if n is a negative integer.
+	if (n < 0)
+	{
+		n = -n;
+		neg = true;
+	}
+
+	// Convert n to string digit by digit
+	while (n != 0)
+	{
+		r = n % 10;
+		n = (n - r) / 10;
+		ret = IntToChar(r) + ret;
+	}
+
+	// Add "-" sign if input is a negative integer.
+	if (neg)
+	{
+		ret = '-' + ret;
+	}
+
+	return ret;
 }

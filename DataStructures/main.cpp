@@ -75,15 +75,11 @@ int main(int argc, char *argv[])
 
 	// Factorial.
 	Algorithm alg;
-	/*cout << "0! = " << alg.Factorial(0) << endl;
-	cout << "1! = " << alg.Factorial(1) << endl;
-	cout << "2! = " << alg.Factorial(2) << endl;
-	cout << "5! = " << alg.Factorial(5) << endl;
-	cout << "10! = " << alg.Factorial(10) << endl;
-	cout << "12! = " << alg.Factorial(12) << endl;
-	cout << "13! = " << alg.Factorial(13) << endl;
-	cout << "100! = " << alg.Factorial(100) << endl;*/
-	cout << alg.MultiplyStrings("100", "1") << endl;
+	cout << "0! = " << alg.Factorial(0) << endl << endl;
+	cout << "10! = " << alg.Factorial(10) << endl << endl;
+	cout << "12! = " << alg.Factorial(12) << endl << endl;
+	cout << "13! = " << alg.Factorial(13) << endl << endl;
+	cout << "1000! = " << alg.Factorial(100) << endl;
 
 	std::getchar();
 	return 0;
