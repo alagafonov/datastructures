@@ -5,6 +5,7 @@
 #include "Stack.h"
 #include "Queue.h"
 #include "Algorithm.h"
+#include "HashTable.h"
 
 using namespace std;
 
@@ -75,11 +76,30 @@ int main(int argc, char *argv[])
 
 	// Factorial.
 	Algorithm alg;
-	cout << "0! = " << alg.Factorial(0) << endl << endl;
-	cout << "10! = " << alg.Factorial(10) << endl << endl;
-	cout << "12! = " << alg.Factorial(12) << endl << endl;
-	cout << "13! = " << alg.Factorial(13) << endl << endl;
-	cout << "1000! = " << alg.Factorial(100) << endl;
+	//cout << "0! = " << alg.Factorial(0) << endl << endl;
+	//cout << "10! = " << alg.Factorial(10) << endl << endl;
+	//cout << "12! = " << alg.Factorial(12) << endl << endl;
+	//cout << "13! = " << alg.Factorial(13) << endl << endl;
+	//cout << "1000! = " << alg.Factorial(100) << endl;
+
+	int data[12] = { 5, 6, 3, 4, 1, 69, 23, 5, 1, 5, 3456, 3 };
+	alg.QuickSort(data, 0, 11);
+	for (int i = 0; i < 12; i++)
+	{
+		cout << data[i] << " ";
+	}
+
+	// Hash table.
+	//HashTable<int, string> hs;
+	//hs.Insert(1, "A");
+	//hs.Insert(2, "B");
+	//hs.Insert(10, "C");
+	//hs.Insert(1937, "D");
+	//hs.Insert(1937, "E");
+	//cout << hs.Retrieve(10) << endl;
+	//cout << hs.Retrieve(100) << endl;
+	//hs.Print();
+
 
 	std::getchar();
 	return 0;

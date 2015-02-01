@@ -118,7 +118,7 @@ T Queue<T>::DeQueue()
 	// If queue is empty return NULL.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	// Save value from top node.
@@ -145,7 +145,7 @@ T Queue<T>::GetFirstNode()
 	// If queue is empty return NULL.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	return front->data;

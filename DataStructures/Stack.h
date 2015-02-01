@@ -108,7 +108,7 @@ T Stack<T>::Pop()
 	// If stack is empty return NULL.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	// Save value from top node.
@@ -135,7 +135,7 @@ T Stack<T>::GetTop()
 	// If stack is empty return NULL.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	return top->data;

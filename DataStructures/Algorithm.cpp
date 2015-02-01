@@ -1,4 +1,4 @@
-#include "Algorithm.h"
+﻿#include "Algorithm.h"
 #include "Stack.h"
 
 Algorithm::Algorithm()
@@ -77,6 +77,68 @@ string Algorithm::MultiplyStrings(string n1, string n2)
 
 	return result;
 }
+
+void Algorithm::QuickSort(int *input, int start, int end)
+{
+	// Make sure that we have at least two items to sort.
+	if (end > start)
+	{
+		// Choose a pivot element from the middle.
+		int pivotIndex = (end + start) / 2;
+		int pivot = input[pivotIndex];
+
+		// Swap it with the last element in the array.
+		Swap(input, end, pivotIndex);
+
+		// Keep track of the position of the last element that is greater than pivot.
+		int swapPos = start;
+
+		// Loop through array start and end bounds
+		for (int i = start; i < end; i++)
+		{
+			// Found element that is smaller than pivot.
+			if (input[i] < pivot)
+			{
+				// Swap it with the position of the element that is bigger than pivot.
+				Swap(input, i, swapPos++);
+			}
+		}
+
+		// Put pivot element where all other elements are smaller than pivot itself.
+		Swap(input, end, swapPos);
+
+		// Sort partition before pivot element.
+		QuickSort(input, start, swapPos - 1);
+
+		// Sort partition after pivot element.
+		QuickSort(input, swapPos + 1, end);
+
+	}
+}
+
+void Algorithm::Swap(int *input, int pos1, int pos2)
+{
+	int tmp = input[pos1];
+	input[pos1] = input[pos2];
+	input[pos2] = tmp;
+}
+
+/*function quicksort(array)
+if length(array) > 1
+pivot : = select any element of array
+	left : = first index of array
+	   right : = last index of array
+			   while left ≤ right
+				   while array[left] < pivot
+				   left : = left + 1
+						  while array[right] > pivot
+						  right : = right - 1
+								  if left ≤ right
+									  swap array[left] with array[right]
+								  left : = left + 1
+									 right : = right - 1
+											 quicksort(array from first index to right)
+											 quicksort(array from left to last index)*/
 
 int Algorithm::CharToInt(char c)
 {

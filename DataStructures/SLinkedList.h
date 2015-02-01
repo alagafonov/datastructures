@@ -230,7 +230,7 @@ T SLinkedList<T>::GetContentAtPos(int i)
 	SLinkedListNode<T> *tmp = GetNode(i);
 	if (tmp == NULL)
 	{
-		return NULL;
+		return T();
 	}
 
 	return tmp->data;
@@ -284,7 +284,7 @@ T SLinkedList<T>::GetNthElementFromTail(int n)
 	// Return NULL if list is empty or n is out of range.
 	if (IsEmpty() || n < 0)
 	{
-		return NULL;
+		return T();
 	}
 
 	// Create first pointer and point it to head.
@@ -296,7 +296,7 @@ T SLinkedList<T>::GetNthElementFromTail(int n)
 		// If end of the list is reached simply return NULL.
 		if (tmp1->next == NULL)
 		{
-			return NULL;
+			return T();
 		}
 
 		// Keep moving first pointer to the next node.
@@ -333,7 +333,7 @@ T SLinkedList<T>::_GetNthElementFromTailRec(int n, SLinkedListNode<T> *node)
 	{
 		// Set position to -1 and return NULL.
 		pos = -1;
-		return NULL;
+		return T();
 	}
 
 	// Run through the list using recursive function.
@@ -358,7 +358,7 @@ T SLinkedList<T>::GetMiddleNodeContent()
 	// If list is empty then return NULL.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	// Create two pointers and point them to head node.

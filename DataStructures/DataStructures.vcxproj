@@ -71,6 +71,7 @@
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="CLinkedList.h" />
     <ClInclude Include="DLinkedList.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="SLinkedList.h" />
     <ClInclude Include="List.h" />

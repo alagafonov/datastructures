@@ -118,7 +118,7 @@ T CLinkedList<T>::GetCurrentNode()
 	// List is empty.
 	if (IsEmpty())
 	{
-		return NULL;
+		return T();
 	}
 
 	// Current pointer has not been set.
