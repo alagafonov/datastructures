@@ -123,23 +123,6 @@ void Algorithm::Swap(int *input, int pos1, int pos2)
 	input[pos2] = tmp;
 }
 
-/*function quicksort(array)
-if length(array) > 1
-pivot : = select any element of array
-	left : = first index of array
-	   right : = last index of array
-			   while left ≤ right
-				   while array[left] < pivot
-				   left : = left + 1
-						  while array[right] > pivot
-						  right : = right - 1
-								  if left ≤ right
-									  swap array[left] with array[right]
-								  left : = left + 1
-									 right : = right - 1
-											 quicksort(array from first index to right)
-											 quicksort(array from left to last index)*/
-
 int Algorithm::CharToInt(char c)
 {
 	return c - 48;
