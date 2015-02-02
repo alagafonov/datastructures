@@ -78,6 +78,53 @@ string Algorithm::MultiplyStrings(string n1, string n2)
 	return result;
 }
 
+int Algorithm::BinarySearch(int *input, int value, int start, int end)
+{
+	// If array is exhausted and nothing was found then return not found flag.
+	if (start > end)
+	{
+		return -1;
+	}
+
+	// Calculate midpoint of the array.
+	int mp = (end + start) / 2;
+
+	// Found the value return the position.
+	if (input[mp] == value)
+	{
+		return mp;
+	}
+
+	// If value is smaller than midpoint then we need to look at first half of the partition.
+	else if (input[mp] > value)
+	{
+		return BinarySearch(input, value, start, mp - 1);
+	}
+
+	// If value is bigger than midpoint then we need to look at second half of the partition.
+	else
+	{
+		return BinarySearch(input, value, mp + 1, end);
+	}
+}
+
+void Algorithm::BubbleSort(int *input, int length)
+{
+	// Go through all elements in the array.
+	for (int i = 0; i < length - 1; i++)
+	{
+		// Start from the end of the array and compare elements at position j with j - 1.
+		for (int j = length - 1; j > i; j--)
+		{
+			// If element at position closer to the end of the array is smaller than the one in front of it then swap elements.
+			if (input[j] < input[j - 1])
+			{
+				Swap(input, j, j - 1);
+			}
+		}
+	}
+}
+
 void Algorithm::QuickSort(int *input, int start, int end)
 {
 	// Make sure that we have at least two items to sort.

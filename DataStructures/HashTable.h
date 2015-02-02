@@ -33,7 +33,7 @@ public:
 	HashTable(int size = 32);
 	~HashTable();
 	bool Insert(K index, E data);
-	E Retrieve(K index);
+	const E *Retrieve(K index);
 	void Print();
 };
 
@@ -114,7 +114,7 @@ bool HashTable<K, E>::Insert(K index, E data)
 }
 
 template <class K, class E>
-E HashTable<K, E>::Retrieve(K index)
+const E *HashTable<K, E>::Retrieve(K index)
 {
 	// Generate hash based on index.
 	int hash = GetHash(index);
@@ -125,13 +125,13 @@ E HashTable<K, E>::Retrieve(K index)
 		// If item does not exist at this index return NULL.
 		if (items[hash] == nullptr)
 		{
-			return E();
+			return nullptr;
 		}
 
 		// Found our index, return data.
 		if (items[hash]->index == index)
 		{
-			return items[hash]->data;
+			return &items[hash]->data;
 		}
 
 		// Get next address (linear function).
@@ -139,11 +139,11 @@ E HashTable<K, E>::Retrieve(K index)
 
 		if (bHash == hash)
 		{
-			return E();
+			return nullptr;
 		}
 	}
 
-	return E();
+	return nullptr;
 }
 
 template <class K, class E>

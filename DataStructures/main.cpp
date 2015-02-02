@@ -6,6 +6,8 @@
 #include "Queue.h"
 #include "Algorithm.h"
 #include "HashTable.h"
+#include "BinaryTree.h"
+#include "BinarySearchTree.h"
 
 using namespace std;
 
@@ -62,7 +64,7 @@ int main(int argc, char *argv[])
 	//cout << stack.IsEmpty() << endl;
 	//stack.Print();
 
-	// Stack.
+	// Queue.
 	//Queue<int> queue;
 	//queue.EnQueue(10);
 	//queue.EnQueue(12);
@@ -74,20 +76,22 @@ int main(int argc, char *argv[])
 	//cout << queue.IsEmpty() << endl;
 	//queue.Print();
 
-	// Factorial.
-	Algorithm alg;
+	// Various algorithms.
+	//Algorithm alg;
 	//cout << "0! = " << alg.Factorial(0) << endl << endl;
 	//cout << "10! = " << alg.Factorial(10) << endl << endl;
 	//cout << "12! = " << alg.Factorial(12) << endl << endl;
 	//cout << "13! = " << alg.Factorial(13) << endl << endl;
 	//cout << "1000! = " << alg.Factorial(100) << endl;
-
-	int data[12] = { 5, 6, 3, 4, 1, 69, 23, 5, 1, 5, 3456, 3 };
-	alg.QuickSort(data, 0, 11);
-	for (int i = 0; i < 12; i++)
-	{
-		cout << data[i] << " ";
-	}
+	//int data[12] = { 5, 6, 3, 4, 1, 69, 23, 5, 1, 5, 3456, 3 };
+	//alg.QuickSort(data, 0, 11);
+	//alg.BubbleSort(data, 12);
+	//int data[5] = { 5, 6, 10, 23, 98 };
+	//cout << alg.BinarySearch(data, 98, 0, 4) << endl;
+	//for (int i = 0; i < 12; i++)
+	//{
+	//	cout << data[i] << " ";
+	//}
 
 	// Hash table.
 	//HashTable<int, string> hs;
@@ -96,10 +100,33 @@ int main(int argc, char *argv[])
 	//hs.Insert(10, "C");
 	//hs.Insert(1937, "D");
 	//hs.Insert(1937, "E");
-	//cout << hs.Retrieve(10) << endl;
-	//cout << hs.Retrieve(100) << endl;
+	//const string *tmp = hs.Retrieve(10);
+	//if (tmp != nullptr)
+	//{
+	//	cout << *tmp << endl;
+	//}
 	//hs.Print();
 
+	// Binary tree.
+	//BinaryTree<string> rt, t1, t2, t3, t4, t5, t6, t7, t8, t9, empty;
+	//t9.Create("C", empty, empty);
+	//t8.Create("E", empty, empty);
+	//t7.Create("H", empty, empty);
+	//t2.Create("A", empty, empty);
+	//t6.Create("D", t9, t8);
+	//t5.Create("I", t7, empty);
+	//t4.Create("B", t2, t6);
+	//t3.Create("G", empty, t5);
+	//rt.Create("F", t4, t3);
+	//rt.PostOrder();
+
+	// Binary search tree.
+	BinarySearchTree<int> bst;
+	bst.Insert(10);
+	bst.Insert(3);
+	bst.Insert(20);
+	bst.Insert(12);
+	bst.PostOrder();
 
 	std::getchar();
 	return 0;
