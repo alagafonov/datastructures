@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 	bst.Insert(3);
 	bst.Insert(20);
 	bst.Insert(12);
-	bst.PostOrder();
+	bst.PreOrder();
 
 	std::getchar();
 	return 0;

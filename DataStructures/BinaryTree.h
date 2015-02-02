@@ -125,8 +125,6 @@ void BinaryTree<T>::Delete(BinaryTreeNode<T> *node)
 {
 	if (node != NULL)
 	{
-		//Delete(node->left);
-		//Delete(node->right);
 		delete node;
 		node = NULL;
 	}

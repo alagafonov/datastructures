@@ -6,8 +6,6 @@ using namespace std;
 template <class T>
 class BinarySearchTree : public BinaryTree<T>
 {
-protected:
-	void Delete(BinaryTreeNode<T> *node);
 public:
 	BinarySearchTree();
 	~BinarySearchTree();
@@ -23,6 +21,11 @@ BinarySearchTree<T>::BinarySearchTree()
 template <class T>
 BinarySearchTree<T>::~BinarySearchTree()
 {
+	if (root != NULL)
+	{
+		Delete(root->left);
+		Delete(root->right);
+	}
 }
 
 template <class T>
@@ -35,7 +38,7 @@ void BinarySearchTree<T>::Insert(const T &data)
 		node = tmp;
 
 		// New data variable is smaller than current node's data - move to left.
-		if (tmp->data < data)
+		if (tmp->data > data)
 		{
 			tmp = tmp->left;
 			direction = 1;
@@ -58,16 +61,5 @@ void BinarySearchTree<T>::Insert(const T &data)
 	else if (direction == 2)
 	{
 		node->right = new BinaryTreeNode<T>(data, NULL, NULL);
-	}
-}
-
-template <class T>
-void BinarySearchTree<T>::Delete(BinaryTreeNode<T> *node)
-{
-	if (node != NULL)
-	{
-		Delete(node->left);
-		Delete(node->right);
-		delete node;
 	}
 }
