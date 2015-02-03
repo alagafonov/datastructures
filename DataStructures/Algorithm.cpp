@@ -163,6 +163,45 @@ void Algorithm::QuickSort(int *input, int start, int end)
 	}
 }
 
+//Christophe Hancart (1992)
+int Algorithm::Hancart(const string &niddle, const string &haystack)
+{
+	int equal = 2;
+	int diff = 1;
+	if (niddle[0] == niddle[1])
+	{
+		equal = 1;
+		diff = 2;
+	}
+
+	int niddleLen = niddle.length();
+	int haystackLen = haystack.length();
+	for (int i = 0; i <= haystackLen - niddleLen; i++)
+	{
+		if (haystack[i + 1] != niddle[1])
+		{
+			i += diff;
+		}
+		else
+		{
+			int j = 1;
+			while (haystack[i + j] == niddle[j])
+			{
+				j++;
+			}
+
+			if (j == niddleLen && niddle[0] == haystack[i])
+			{
+				return i;
+			}
+
+			i += equal;
+		}
+	}
+
+	return -1;
+}
+
 void Algorithm::Swap(int *input, int pos1, int pos2)
 {
 	int tmp = input[pos1];

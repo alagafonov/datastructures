@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
 
 	// Various algorithms.
 	//Algorithm alg;
+	//cout << alg.Hancart("test", "not tes found") << endl;
 	//cout << "0! = " << alg.Factorial(0) << endl << endl;
 	//cout << "10! = " << alg.Factorial(10) << endl << endl;
 	//cout << "12! = " << alg.Factorial(12) << endl << endl;
@@ -121,12 +122,12 @@ int main(int argc, char *argv[])
 	//rt.PostOrder();
 
 	// Binary search tree.
-	BinarySearchTree<int> bst;
-	bst.Insert(10);
-	bst.Insert(3);
-	bst.Insert(20);
-	bst.Insert(12);
-	bst.PreOrder();
+	//BinarySearchTree<int> bst;
+	//bst.Insert(10);
+	//bst.Insert(3);
+	//bst.Insert(20);
+	//bst.Insert(12);
+	//bst.PreOrder();
 
 	std::getchar();
 	return 0;

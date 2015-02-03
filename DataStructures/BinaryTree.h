@@ -11,7 +11,7 @@ public:
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
 	T data;
-	BinaryTreeNode(T data, BinaryTreeNode *left, BinaryTreeNode *right)
+	BinaryTreeNode(const T &data, BinaryTreeNode *left, BinaryTreeNode *right)
 	{
 		this->data = data;
 		this->left = left;
@@ -29,7 +29,7 @@ protected:
 public:
 	BinaryTree();
 	~BinaryTree();
-	void Create(T data, BinaryTree &left, BinaryTree &right);
+	void Create(const T &data, BinaryTree &left, BinaryTree &right);
 	void PreOrder();
 	void PreOrder(BinaryTreeNode<T> *node);
 	void InOrder();
@@ -52,7 +52,7 @@ BinaryTree<T>::~BinaryTree()
 }
 
 template <class T>
-void BinaryTree<T>::Create(T data, BinaryTree &left, BinaryTree &right)
+void BinaryTree<T>::Create(const T &data, BinaryTree &left, BinaryTree &right)
 {
 	root = new BinaryTreeNode<T>(data, left.root, right.root);
 }
