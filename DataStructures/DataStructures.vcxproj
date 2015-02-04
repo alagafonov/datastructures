@@ -73,6 +73,7 @@
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="CLinkedList.h" />
     <ClInclude Include="DLinkedList.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="SLinkedList.h" />

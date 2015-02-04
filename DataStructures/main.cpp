@@ -8,6 +8,7 @@
 #include "HashTable.h"
 #include "BinaryTree.h"
 #include "BinarySearchTree.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -128,6 +129,12 @@ int main(int argc, char *argv[])
 	//bst.Insert(20);
 	//bst.Insert(12);
 	//bst.PreOrder();
+
+	// Graph.
+	Graph<int> g;
+	Vertex<int> &v1 = g.CreateVertex(10);
+	Vertex<int> &v2 = g.CreateVertex(20);
+	g.CreateEdge(v1, v2);
 
 	std::getchar();
 	return 0;
