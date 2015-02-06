@@ -9,6 +9,7 @@
 #include "BinaryTree.h"
 #include "BinarySearchTree.h"
 #include "Graph.h"
+#include "MinHeap.h"
 
 using namespace std;
 
@@ -131,10 +132,20 @@ int main(int argc, char *argv[])
 	//bst.PreOrder();
 
 	// Graph.
-	Graph<int> g;
-	Vertex<int> &v1 = g.CreateVertex(10);
-	Vertex<int> &v2 = g.CreateVertex(20);
-	g.CreateEdge(v1, v2);
+	//Graph<int> g;
+	//Vertex<int> &v1 = g.CreateVertex(10);
+	//Vertex<int> &v2 = g.CreateVertex(20);
+	//g.CreateEdge(v1, v2);
+
+	// Min heap.
+	MinHeap mh(10);
+	mh.Insert(10);
+	mh.Insert(11);
+	mh.Insert(12);
+	mh.Insert(33);
+	mh.Insert(5);
+	mh.Insert(5);
+	mh.Print();
 
 	std::getchar();
 	return 0;
