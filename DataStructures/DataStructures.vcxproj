@@ -75,6 +75,7 @@
     <ClInclude Include="DLinkedList.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="MaxHeap.h" />
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="SLinkedList.h" />

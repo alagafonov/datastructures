@@ -10,6 +10,7 @@
 #include "BinarySearchTree.h"
 #include "Graph.h"
 #include "MinHeap.h"
+#include "MaxHeap.h"
 
 using namespace std;
 
@@ -79,7 +80,7 @@ int main(int argc, char *argv[])
 	//queue.Print();
 
 	// Various algorithms.
-	//Algorithm alg;
+	Algorithm alg;
 	//cout << alg.Hancart("test", "not tes found") << endl;
 	//cout << "0! = " << alg.Factorial(0) << endl << endl;
 	//cout << "10! = " << alg.Factorial(10) << endl << endl;
@@ -138,14 +139,27 @@ int main(int argc, char *argv[])
 	//g.CreateEdge(v1, v2);
 
 	// Min heap.
-	MinHeap mh(10);
-	mh.Insert(10);
-	mh.Insert(11);
-	mh.Insert(12);
-	mh.Insert(33);
-	mh.Insert(5);
-	mh.Insert(5);
-	mh.Print();
+	//MinHeap mh(10);
+	//mh.Insert(10);
+	//mh.Insert(11);
+	//mh.Insert(12);
+	//mh.Insert(33);
+	//mh.Insert(5);
+	//mh.Insert(5);
+	//mh.Print();
+
+	// Max heap.
+	//int arr[] = { 43, 11, 12, 33, 5, 100 };
+	//MaxHeap mh(arr, 6);
+	//mh.HeapSort();
+	//mh.Insert(43);
+	//mh.Insert(11);
+	//mh.Insert(12);
+	//mh.Insert(33);
+	//mh.Insert(5);
+	//mh.Insert(5);
+	//mh.Insert(100);
+	//mh.Print();
 
 	std::getchar();
 	return 0;
