@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Binary tree node class.
+// Stores node contents and the pointer to the left and right nodes.
 template <class T>
 class BinaryTreeNode
 {
@@ -19,41 +21,65 @@ public:
 	}
 };
 
+// Binary tree class.
 template <class T>
 class BinaryTree
 {
 protected:
 	BinaryTreeNode<T> *root;
+
+	// Delete entire tree.
 	void Delete(BinaryTreeNode<T> *node);
+
+	// Visit a node.
 	void Visit(BinaryTreeNode<T> *node);
 public:
 	BinaryTree();
 	~BinaryTree();
+
+	// Creates new tree.
 	void Create(const T &data, BinaryTree &left, BinaryTree &right);
+
+	// Preorder traversal using recursion - wrapper method.
 	void PreOrder();
+
+	// Preorder traversal using recursion.
 	void PreOrder(BinaryTreeNode<T> *node);
+	
+	// Inorder traversal using recursion - wrapper method.
 	void InOrder();
+	
+	// Inorder traversal using recursion.
 	void InOrder(BinaryTreeNode<T> *node);
+	
+	// Postorder traversal using recursion - wrapper method.
 	void PostOrder();
+	
+	// Postorder traversal using recursion.
 	void PostOrder(BinaryTreeNode<T> *node);
+
+	// Delete wrapper method.
 	void Delete();
 };
 
 template <class T>
 BinaryTree<T>::BinaryTree()
 {
+	// Create empty tree with root pointing to NULL.
 	root = NULL;
 }
 
 template <class T>
 BinaryTree<T>::~BinaryTree()
 {
+	// Delete tree.
 	Delete();
 }
 
 template <class T>
 void BinaryTree<T>::Create(const T &data, BinaryTree &left, BinaryTree &right)
 {
+	// Create new tree.
 	root = new BinaryTreeNode<T>(data, left.root, right.root);
 }
 
@@ -66,10 +92,16 @@ void BinaryTree<T>::PreOrder()
 template <class T>
 void BinaryTree<T>::PreOrder(BinaryTreeNode<T> *node)
 {
+	// Preorder traversal using recursion.
 	if (node != NULL)
 	{
+		// Visit node first.
 		Visit(node);
+
+		// Go to left node.
 		PreOrder(node->left);
+
+		// Go to right node.
 		PreOrder(node->right);
 	}
 }
@@ -83,10 +115,16 @@ void BinaryTree<T>::InOrder()
 template <class T>
 void BinaryTree<T>::InOrder(BinaryTreeNode<T> *node)
 {
+	// Inorder traversal using recursion.
 	if (node != NULL)
 	{
+		// Go to left node.
 		InOrder(node->left);
+
+		// Visit node.
 		Visit(node);
+
+		// Go to right node.
 		InOrder(node->right);
 	}
 }
@@ -100,10 +138,16 @@ void BinaryTree<T>::PostOrder()
 template <class T>
 void BinaryTree<T>::PostOrder(BinaryTreeNode<T> *node)
 {
+	// Postorder traversal using recursion.
 	if (node != NULL)
 	{
+		// Go to left node.
 		PostOrder(node->left);
+
+		// Go to right node.
 		PostOrder(node->right);
+
+		// Visit node.
 		Visit(node);
 	}
 }
@@ -111,6 +155,7 @@ void BinaryTree<T>::PostOrder(BinaryTreeNode<T> *node)
 template <class T>
 void BinaryTree<T>::Visit(BinaryTreeNode<T> *node)
 {
+	// This function just prints contents of the node on the screen.
 	cout << node->data << " ";
 }
 
